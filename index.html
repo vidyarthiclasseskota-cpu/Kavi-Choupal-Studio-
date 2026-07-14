@@ -322,4 +322,26 @@
             var noText = document.getElementById('noPoemText');
             if(noText) { noText.remove(); }
             
-     
+            var item = document.createElement('div'); 
+            item.className = 'sahitya-item';
+            item.setAttribute('data-cat', cat);
+            
+            if(imgFile) {
+                var r = new FileReader(); r.onload = function(e) {
+                    item.innerHTML = '<span class="badge">'+cat+'</span><h4>'+title+' <span style="font-size:0.9rem;color:#94a3b8;font-family:sans-serif;">(द्वारा: '+name+')</span></h4><img src="'+e.target.result+'" class="uploaded-img"><div class="sahitya-text">'+content+'</div>';
+                    container.insertBefore(item, container.firstChild); resetUserForm();
+                }; r.readAsDataURL(imgFile);
+            } else {
+                item.innerHTML = '<span class="badge">'+cat+'</span><h4>'+title+' <span style="font-size:0.9rem;color:#94a3b8;font-family:sans-serif;">(द्वारा: '+name+')</span></h4><div class="sahitya-text">'+content+'</div>';
+                container.insertBefore(item, container.firstChild); resetUserForm();
+            }
+        }
+        function resetUserForm() {
+            document.getElementById('actualPublishForm').style.display = 'none'; document.getElementById('userEmailBox').style.display = 'block';
+            document.getElementById('emailInputStage').style.display = 'block'; document.getElementById('otpInputStage').style.display = 'none';
+            document.getElementById('writerName').value = ''; document.getElementById('poemTitle').value = ''; document.getElementById('poemContent').value = '';
+            alert("आपकी रचना लाइव जोड़ दी गई है!"); switchPage('sahitya', document.getElementById('btn-sahitya'));
+        }
+    </script>
+</body>
+</html>
