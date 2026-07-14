@@ -6,11 +6,10 @@
     <title>कवि चौपाल स्टूडियो - Sahitya Platform</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- विशेष साहित्य और डिज़ाइन फ़ॉन्ट्स -->
     <link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Yatra+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* 1. एंटी-कॉपी स्क्रीन प्रोटेक्शन सीएसएस */
+        /* एंटी-कॉपी स्क्रीन प्रोटेक्शन */
         * { 
             margin: 0; padding: 0; box-sizing: border-box; 
             -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; 
@@ -18,7 +17,7 @@
         
         body { font-family: 'Poppins', sans-serif; background: #12161a; color: #e2e8f0; min-height: 100vh; display: flex; flex-direction: column; }
         
-        /* 2. लोगो और हेडर स्टाइल */
+        /* लोगो और हेडर */
         header { background: linear-gradient(135deg, #1e293b, #0f172a); padding: 30px 20px; text-align: center; border-bottom: 2px solid #d4af37; }
         .site-logo { 
             width: 140px; height: 140px; border-radius: 15px; border: 3px solid #d4af37; 
@@ -27,12 +26,12 @@
         header h1 { font-family: 'Yatra One', serif; color: #d4af37; font-size: 2.2rem; margin-top: 5px; }
         header p { font-size: 0.95rem; color: #94a3b8; font-style: italic; }
         
-        /* 3. चलती हुई न्यूज़ पट्टी */
+        /* न्यूज़ पट्टी */
         .notification-bar { background: #d4af37; color: #12161a; font-weight: 600; padding: 8px 0; overflow: hidden; white-space: nowrap; cursor: pointer; border-bottom: 1px solid rgba(0,0,0,0.2); }
         .notification-text { display: inline-block; padding-left: 100%; animation: marquee 22s linear infinite; }
         @keyframes marquee { 0% { transform: translate3d(0,0,0); } 100% { transform: translate3d(-100%,0,0); } }
 
-        /* 4. फूल-प्रूफ CSS आधारित मेनू बार */
+        /* मेनू बार */
         .nav-container { background: #0f172a; border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; position: relative; }
         #menu-check { display: none; }
         .menu-toggle-label { background: #d4af37; color: #12161a; padding: 6px 14px; border-radius: 6px; font-weight: bold; font-size: 1.5rem; cursor: pointer; }
@@ -46,10 +45,9 @@
         .nav-tab-btn { background: transparent; color: #94a3b8; border: none; padding: 16px 20px; font-size: 1.1rem; text-align: left; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.05); font-family: inherit; cursor: pointer; display: block;}
         .nav-tab-btn.active, .nav-tab-btn:hover { color: #d4af37; background: rgba(255,255,255,0.04); }
 
-        /* 5. लेआउट और कार्ड्स */
+        /* लेआउट और कार्ड्स */
         .container { max-width: 800px; width: 100%; margin: 25px auto; padding: 0 15px; flex: 1; }
         
-        /* सभी सेक्शन्स डिफ़ॉल्ट रूप से छुपे रहेंगे, सिर्फ जावास्क्रिप्ट एक्टिव करेगी */
         .page-section { display: none !important; }
         .page-section.active-sec { display: block !important; }
         
@@ -60,14 +58,13 @@
         .custom-card { background: #1e293b; padding: 30px; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.15); margin-bottom: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
         .custom-card h3 { font-family: 'Yatra One', serif; color: #d4af37; margin-bottom: 20px; text-align: center; }
         
-        /* इनपुट बॉक्स */
         input, textarea, select { 
             width: 100%; padding: 12px; background: #0f172a; border: 1px solid #475569; border-radius: 6px; color: #fff; margin-bottom: 15px; font-family: inherit;
             -webkit-user-select: text !important; user-select: text !important;
         }
         .btn-submit { background: #d4af37; color: #12161a; border: none; padding: 12px; font-weight: 600; border-radius: 6px; cursor: pointer; width: 100%; font-size: 1rem; }
 
-        /* 6. शाही कविता फ़ॉन्ट डिज़ाइन (Rozha One) */
+        /* शाही कविता फ़ॉन्ट डिज़ाइन */
         .sahitya-item { border-bottom: 1px solid rgba(255,255,255,0.05); padding: 25px 0; text-align: center; display: block; }
         .sahitya-item h4 { font-family: 'Yatra One', serif; color: #d4af37; font-size: 1.7rem; margin-bottom: 15px; }
         .sahitya-text { 
@@ -77,9 +74,6 @@
         .uploaded-img { max-width: 100%; max-height: 350px; border-radius: 8px; margin: 15px auto; display: block; border: 1px solid rgba(212,175,55,0.3); }
         .badge { display: inline-block; background: rgba(212, 175, 55, 0.1); color: #d4af37; padding: 4px 12px; border-radius: 10px; font-size: 0.8rem; border: 1px solid rgba(212, 175, 55, 0.2); margin-bottom: 8px; }
         
-        /* बुक्स, यूट्यूब और फुटर */
-        .book-item { background: #0f172a; padding: 15px 20px; margin-bottom: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border-left: 4px solid #d4af37; }
-        .download-btn { background: rgba(212, 175, 55, 0.2); color: #d4af37; padding: 6px 15px; border-radius: 4px; text-decoration: none; font-size: 0.9rem; border: 1px solid #d4af37; font-weight: 600; }
         .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
         .about-address { margin-top: 20px; padding-top: 15px; border-top: 1px dashed rgba(212, 175, 55, 0.3); text-align: left; line-height: 1.8; color: #cbd5e1;}
@@ -91,20 +85,17 @@
 <body>
 
     <header>
-        <!-- लोगो इमेज फाइल का नाम सही रखें -->
         <img src="kavi choupal logo.png" alt="Kavi Choupal Logo" class="site-logo">
         <h1>कवि चौपाल स्टूडियो 📜</h1>
         <p>कविता, कहानी, उपन्यास और संगीत का डिजिटल मंच</p>
     </header>
 
-    <!-- न्यूज़ पट्टी -->
     <div class="notification-bar" onclick="goToPublishTab()">
         <div class="notification-text">
             📢 यदि आप अपनी कविताएं हमारी वेबसाइट पर अपलोड करना चाहते हैं, तो यहाँ या ऊपर मेनू में 'Publish Your Poem' पर क्लिक करके अपनी रचना पब्लिश कर सकते हैं। &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📜 शब्दों के इस पावन सफर में आपका स्वागत है...
         </div>
     </div>
 
-    <!-- मेनू बार -->
     <div class="nav-container">
         <div style="color:#d4af37; font-weight:bold;">कवि चौपाल मेनू</div>
         <input type="checkbox" id="menu-check">
@@ -115,7 +106,6 @@
             <button class="nav-tab-btn" id="btn-sahitya" onclick="switchPage('sahitya', this)">साहित्य विधाएँ</button>
             <button class="nav-tab-btn" id="btn-youtube" onclick="switchPage('youtube', this)">YouTube</button>
             <button class="nav-tab-btn" id="btn-kuldeep" onclick="switchPage('kuldeep', this)">कुलदीप विद्यार्थी</button>
-            <button class="nav-tab-btn" id="btn-books" onclick="switchPage('books', this)">महत्वपूर्ण पुस्तकें</button>
             <button class="nav-tab-btn" id="btn-publish" onclick="switchPage('publish', this)">Publish Your Poem</button>
             <button class="nav-tab-btn" id="btn-about" onclick="switchPage('about', this)">हमारे बारे में</button>
         </nav>
@@ -165,7 +155,7 @@
                 <div id="kuldeepSahityaList">
                     <div class="sahitya-item">
                         <span class="badge">राजस्थानी कविता</span>
-                        <h4>maati ri mahak</h4>
+                        <h4>माटी री महक</h4>
                         <div class="sahitya-text">"धरती धोरां री आ तो देवभूम कहलावे, इणरी बोली मिश्री सूं भी मीठी लागे।"</div>
                     </div>
                 </div>
@@ -190,18 +180,7 @@
             </div>
         </section>
 
-        <!-- 6. BOOKS SECTION -->
-        <section id="books-section" class="page-section">
-            <div class="custom-card">
-                <h3>📖 महत्वपूर्ण पुस्तकें (PDF)</h3>
-                <div class="book-item">
-                    <div>काव्य संकलन - भाग 1</div>
-                    <a href="YOUR_GOOGLE_DRIVE_LINK_HERE" target="_blank" class="download-btn">📥 PDF डाउनलोड</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 7. PUBLISH POEM SECTION -->
+        <!-- 6. PUBLISH POEM SECTION -->
         <section id="publish-section" class="page-section">
             <div class="custom-card" id="userEmailBox">
                 <h3>✒️ Publish Your Poem</h3>
@@ -226,7 +205,7 @@
             </div>
         </section>
 
-        <!-- 8. ABOUT US SECTION -->
+        <!-- 7. ABOUT US SECTION -->
         <section id="about-section" class="page-section">
             <div class="custom-card" style="border-left: 5px solid #d4af37;">
                 <h3>📜 हमारे बारे में (About Us)</h3>
@@ -246,11 +225,9 @@
         <button class="secret-admin-btn" onclick="openSecretAdmin()">• Studio Controls</button>
     </footer>
 
-    <!-- 100% फुल जावास्क्रिप्ट लॉजिक जो कभी फेल नहीं होगा -->
     <script>
         var generatedOTP = "";
         
-        // 1. एंटी-कॉपी प्रोटेक्शन स्क्रिप्ट
         document.addEventListener('contextmenu', event => event.preventDefault());
         document.addEventListener('keydown', function(e) {
             if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 65)) {
@@ -260,7 +237,6 @@
 
         function goToPublishTab() { switchPage('publish', document.getElementById('btn-publish')); }
 
-        // 2. पक्का और अचूक पेज स्विचिंग लॉजिक
         function switchPage(sectionId, btnElement) {
             var sections = document.querySelectorAll('.page-section');
             sections.forEach(function(sec) {
@@ -285,7 +261,6 @@
             document.getElementById('menu-check').checked = false;
         }
 
-        // 3. साहित्य विधा फ़िल्टर लॉजिक
         function filterGenre(genre, btnElement) {
             var filterBtns = document.getElementsByClassName('filter-btn');
             for(var i=0; i<filterBtns.length; i++) { filterBtns[i].classList.remove('active'); }
@@ -303,7 +278,6 @@
             }
         }
 
-        // 4. सुरक्षित एडमिन कंट्रोल लॉजिक
         function openSecretAdmin() { switchPage('secret-admin', null); document.getElementById('adminAuthBox').style.display = 'block'; document.getElementById('adminUploadForm').style.display = 'none'; }
         function verifyAdminPass() { if(document.getElementById('adminPass').value.trim() === "12345") { document.getElementById('adminAuthBox').style.display = 'none'; document.getElementById('adminUploadForm').style.display = 'block'; } else { alert("गलत पासवर्ड!"); } }
         
@@ -322,4 +296,30 @@
                 }; r.readAsDataURL(imgFile);
             } else {
                 item.innerHTML = '<span class="badge">'+cat+'</span><h4>'+title+'</h4><div class="sahitya-text">'+content+'</div>';
-                list.insertBefore(item, list.firstChild); alert("रचना सफलतापूर्वक पब्लिश हो गई!"); switchPage(
+                list.insertBefore(item, list.firstChild); alert("रचना सफलतापूर्वक पब्लिश हो गई!"); switchPage('kuldeep', document.getElementById('btn-kuldeep'));
+            }
+        }
+
+        function sendUserOTP() {
+            var email = document.getElementById('writerEmail').value.trim();
+            if(!email || !email.includes("@")) { alert("वैध ईमेल डालें!"); return; }
+            generatedOTP = Math.floor(1000 + Math.random() * 9000).toString();
+            document.getElementById('emailInputStage').style.display = 'none';
+            document.getElementById('otpInputStage').style.display = 'block';
+            document.getElementById('otpHint').innerText = "✉️ सुरक्षा कोड: " + generatedOTP;
+        }
+        function verifyUserOTP() { if(document.getElementById('userOTP').value.trim() === generatedOTP) { document.getElementById('userEmailBox').style.display = 'none'; document.getElementById('actualPublishForm').style.display = 'block'; } else { alert("गलत OTP!"); } }
+
+        function publishUserContent() {
+            var name = document.getElementById('writerName').value.trim();
+            var title = document.getElementById('poemTitle').value.trim();
+            var cat = document.getElementById('poemCategory').value;
+            var content = document.getElementById('poemContent').value.trim();
+            var imgFile = document.getElementById('writerImage').files[0];
+            if(!name || !title || !content) { alert("सभी विवरण भरें!"); return; }
+            var container = document.getElementById('genreContainer');
+            
+            var noText = document.getElementById('noPoemText');
+            if(noText) { noText.remove(); }
+            
+     
